@@ -12,11 +12,21 @@ php-mysql \
 php-mbstring \
 php-xml \
 sendmail \
+vim 
+
+WORKDIR /var/www/html/
 
 RUN wget https://wordpress.org/latest.tar.gz && \
-tar -xvf latest.tar.gz && \
-mv /wordpress/* /var/www/html/ && \
-chown -R www-data:www-data /var/www/html && \ 
-rm -r /wordpress latest.tar.gz
+tar -xvf latest.tar.gz \
+&& mv wordpress/* . \
+&& chown -R www-data:www-data . && \ 
+rm -r wordpress latest.tar.gz
 
-RUN mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
+RUN mv ./wp-config-sample.php ./wp-config.php
+
+COPY ./wp-config.php ./wp-config.php
+
+COPY ./www.conf /etc/php/7.3/fpm/pool.d/www.conf
+
+#CMD ["service php7.3-fpm start"]
+CMD /bin/bash

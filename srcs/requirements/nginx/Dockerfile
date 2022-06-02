@@ -14,6 +14,5 @@ RUN openssl req -newkey rsa:4096 -sha256 -x509 -days 365 -nodes -out \
         -subj "/C=FR/ST=Paris/L=Paris/O=42/CN=Kamanfo/"
 
 EXPOSE 443
-EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["service start nginx", "-g", "daemon off;"]
