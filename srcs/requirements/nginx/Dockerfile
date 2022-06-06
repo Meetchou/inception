@@ -15,4 +15,4 @@ RUN openssl req -newkey rsa:4096 -sha256 -x509 -days 365 -nodes -out \
 
 EXPOSE 443
 
-CMD ["service start nginx", "-g", "daemon off;"]
+CMD ["nginx"]

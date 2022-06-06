@@ -24,9 +24,9 @@ rm -r wordpress latest.tar.gz
 
 RUN mv ./wp-config-sample.php ./wp-config.php
 
+RUN service php7.3-fpm start
+
 COPY ./wp-config.php ./wp-config.php
 
 COPY ./www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
-#CMD ["service php7.3-fpm start"]
-CMD /bin/bash
