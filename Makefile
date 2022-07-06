@@ -1,14 +1,15 @@
 all:
 	mkdir -p /home/kamanfo/data/mbdata
 	mkdir -p /home/kamanfo/data/wordpress
-	@cp srcs/requirements/wordpress/index.html /home/kamanfo/data/wordpress
+	cp srcs/requirements/wordpress/index.html /home/kamanfo/data/wordpress
+	echo "127.0.0.1     kamanfo.42.fr" >> /etc/hosts
 	docker-compose up --build -d 
 
 down:
 	docker-compose down
 
 clean:
-	@docker stop $$(docker ps -qa);\
+	docker stop $$(docker ps -qa);\
 	docker rm $$(docker ps -qa);\
 	docker rmi -f $$(docker images -qa);\
 	docker volume rm $$(docker volume ls -q);\
