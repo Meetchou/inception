@@ -29,7 +29,7 @@ define( 'DB_USER', 'kamanfo' );
 define( 'DB_PASSWORD', '12345' );
 
 /** Database hostname */
-define( 'DB_HOST', '172.18.0.3' );
+define( 'DB_HOST', 'mariadb' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -48,14 +48,15 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+
+define('AUTH_KEY', '+>wVv+L& 6/,hYL8wjgz!;(Fz>,Mdsf>Q1V4C/Ja|,VDF9~b<dj%04|+||M77WLg');
+define('SECURE_AUTH_KEY', ']hIuB%&!6Q`ck|DDUFPpYo:op~~v*{n87YduwH{c{vj%j|g;Tva>+%fZVDE5x|T]');
+define('LOGGED_IN_KEY', 'n}E#^_ur}yO^[/mr^+JNQ}(?=B)|X2sR|e,H6-BI+xQpIt)]k&YH#{(]t1R)+!AJ');
+define('NONCE_KEY', 'ty.z(WfGuO+SQaL*/3!}?F%dt?*bO~4F]wV.%:k{718p|+uO<C2k55#bT.!aLnR>');
+define('AUTH_SALT', '?g7?Y<h9]2q 5B<vZi(5Hjy/V{|ArTQ1Z#zmE,v_0&#7ykf~H9Czcpt-%%f4+SSi');
+define('SECURE_AUTH_SALT', 'wg)DHKW}B.$$e Dug^%(pWBSMP)I06]ZnK_4%`}2eScIm-EW->*g:a+DlcIQ|d1;');
+define('LOGGED_IN_SALT', 'K0,pY&+||;{K!n>C5B*,Y8[e.+65VJHhyPVc{zc%!eT+@fGxJf/E3uI+bRRWJ.hD');
+define('NONCE_SALT', '$sQ0(`m<|E-NM2|VDBs/I<s0p-$2Iv0QQ[t~Xt3DHC$zlVJsfcw{o~Eg6q&`d231');
 
 /**#@-*/
 

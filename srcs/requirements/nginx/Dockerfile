@@ -1,18 +1,14 @@
 FROM debian:buster
 
-RUN apt-get update
-RUN apt-get install -y nginx
-RUN apt-get install -y openssl
+RUN apt-get update -y && apt-get upgrade -y && \
+apt-get -y install nginx openssl
 
-COPY ./conf/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./conf/nginx.conf /etc/nginx/sites-available/default
 
 RUN mkdir /etc/nginx/ssl
 
-RUN openssl req -newkey rsa:4096 -sha256 -x509 -days 365 -nodes -out \ 
-	/etc/nginx/ssl/kamanfo.pem \
-        -keyout /etc/nginx/ssl/kamanfo.key \
-        -subj "/C=FR/ST=Paris/L=Paris/O=42/CN=Kamanfo/"
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/kamanfo.pem -out /etc/ssl/certs/kamanfo.crt -subj "/C=FR/ST=Paris/L=Paris/O=42/CN=Kamanfo/" 
 
 EXPOSE 443
 
-CMD ["nginx"]
+CMD /usr/sbin/nginx -g "daemon off;"
