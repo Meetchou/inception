@@ -41,10 +41,6 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 
 WORKDIR /var/www/html/
 
-COPY index.html /tmp/index.html
-
-RUN mv /tmp/index.html /var/www/html
-
 RUN service php7.3-fpm start
 
 CMD wp core install --title=$WP_TITLE --admin_name=$WP_ADMIN_NAME --admin_password=$WP_ADMIN_PWD --admin_email=$WP_ADMIN_EMAIL --url=$DOMAIN_NAME --allow-root && php-fpm7.3 -F -R 
