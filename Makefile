@@ -2,7 +2,7 @@ all:
 	mkdir -p /home/kamanfo/data/mbdata
 	mkdir -p /home/kamanfo/data/wordpress
 	echo "127.0.0.1     kamanfo.42.fr" >> /etc/hosts
-	DOCKER_DEFAULT_PLATFORM=linux/amd64 docker-compose up --build -d 
+	docker-compose up --build -d 
 
 down:
 	docker-compose down
